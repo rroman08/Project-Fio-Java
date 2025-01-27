@@ -15,6 +15,38 @@ public class MoveZeroes {
         int[] nums = {0, 1, 0, 3, 12};
         moveZeroes2(nums);
         System.out.println(Arrays.toString(nums));
+        nums = new int[]{0, 1, 0, 3, 12};
+        System.out.println(Arrays.toString(nums));
+        moveZeroes(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
+    // TC: O(n)
+    // SC: O(1)
+    public static void moveZeroes(int[] nums) {
+        if (nums.length == 1) return;
+
+        // Create the left pointer
+        int left = 0;
+        // Create right pointer in for-loop
+        for (int right = 0; right < nums.length; right++) {
+            // If the right pointer is non-zero, update the value at the left pointer
+            // with the value at the right pointer
+            if (nums[right] != 0) {
+                nums[left] = nums[right];
+                // Every time we update the value at the left pointer we have to move
+                // the left pointer one along
+                left++;
+            }
+            // If value at right pointer is 0, we do nothing. I.e., move it along the array
+        }
+
+        // After right pointer reaches the end on the array, we have to fill the remaining
+        // positions of the left pointer with zeroes until end is reached
+        // (from left to nums.length - 1)
+        for (int i = left; i < nums.length; i++) {
+            nums[i] = 0;
+        }
     }
 
     // This algorithm is NOT in place (brute-force solution)
