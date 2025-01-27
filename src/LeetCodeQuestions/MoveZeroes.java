@@ -9,8 +9,8 @@ public class MoveZeroes {
     // Given an integer array "nums" move all 0s to the end of it while maintaining the relative
     // order of the non-zero elements. (Must be done in place without making a copy of the array)
     // Ex: nums = {0, 1, 0, 3, 12} -> {1, 3, 13, 0, 0}
-    // TC: O(m*n) where m is the lengths of the list and n is the longest string in the list
-    // SC: 0(1) only use one prefix without any additional data structure
+    // TC: O(n)
+    // SC: 0(1)
     public static void main(String[] args) {
         int[] nums = {0, 1, 0, 3, 12};
         moveZeroes2(nums);
