@@ -1,4 +1,4 @@
-package LeetCodeQuestions;
+package LeetCode;
 
 public class SetMatrixZeroes {
     // LeetCode 73

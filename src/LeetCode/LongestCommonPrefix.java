@@ -1,4 +1,4 @@
-package LeetCodeQuestions;
+package LeetCode;
 
 public class LongestCommonPrefix {
     // LeetCode 14
