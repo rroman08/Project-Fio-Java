@@ -25,7 +25,6 @@ public class MoveZeroes {
     // SC: O(1)
     public static void moveZeroes(int[] nums) {
         if (nums.length == 1) return;
-
         // Create the left pointer
         int left = 0;
         // Create right pointer in for-loop
