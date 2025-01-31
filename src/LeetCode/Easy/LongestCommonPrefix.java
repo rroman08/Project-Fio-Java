@@ -1,21 +1,14 @@
-package LeetCode;
+package LeetCode.Easy;
 
+/**
+ * (14)
+ * Write a fn to find the longest common prefix string amongst an array of strings.
+ * If there is no common prefix, return an empty string.
+ * Ex: {"flower", "flow", "flight"} -> "fl"
+ * TC: O(m*n) where m is the lengths of the list and n is the longest string in the list
+ * SC: 0(1) only use one prefix without any additional data structure
+ */
 public class LongestCommonPrefix {
-    // LeetCode 14
-    // Write a fn to find the longest common prefix string amongst an array of strings.
-    // If there is no common prefix, return an empty string.
-    // Ex: {"flower", "flow", "flight"} -> "fl"
-    // TC: O(m*n) where m is the lengths of the list and n is the longest string in the list
-    // SC: 0(1) only use one prefix without any additional data structure
-    public static void main(String[] args) {
-        String[] arr1 = {"flower", "flow", "flight"};
-        String[] arr2 = {"abcd", "accd", "adcd"};
-        String[] arr3 = {"dog", "racecar", "car"};
-
-        System.out.println(longestCommonPrefix(arr1));
-        System.out.println(longestCommonPrefix(arr2));
-        System.out.println(longestCommonPrefix(arr3));
-    }
 
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) return "";
@@ -35,4 +28,4 @@ public class LongestCommonPrefix {
         }
         return prefix;
     }
- }
+}
