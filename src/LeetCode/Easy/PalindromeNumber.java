@@ -31,16 +31,8 @@ public class PalindromeNumber {
             // Remove the last digit from x
             x /= 10;
         }
-
         // A number is a palindrome if the first half equals the reversed second half
         // or if we ignore the middle digit in odd-length numbers (reversedHalf / 10)
         return x == reversedHalf || x == reversedHalf / 10;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isPalindrome(121));  // true
-        System.out.println(isPalindrome(-121)); // false
-        System.out.println(isPalindrome(10));   // false
-        System.out.println(isPalindrome(1221)); // true
     }
 }

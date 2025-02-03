@@ -9,7 +9,6 @@ package LeetCode.Easy;
  * SC: 0(1) only use one prefix without any additional data structure
  */
 public class LongestCommonPrefix {
-
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) return "";
         if (strs.length == 1) return strs[0];

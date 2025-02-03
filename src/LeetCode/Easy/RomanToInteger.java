@@ -8,9 +8,7 @@ import java.util.Map;
  * Roman numerals are represented by seven different symbols:
  * I=1, V=5, X=10, L=50, C=100, D=500 and M=1000.
  */
-
 public class RomanToInteger {
-
     public static int romanToInt(String s) {
         Map<Character, Integer> romanMap = new HashMap<>();
         romanMap.put('I', 1);
@@ -23,7 +21,6 @@ public class RomanToInteger {
 
         int result = 0;
         int prevVal = 0;
-
         for (int i = s.length() - 1; i >= 0 ; i--) {
             int curVal = romanMap.get(s.charAt(i));
 
@@ -35,11 +32,6 @@ public class RomanToInteger {
 
             prevVal = curVal;
         }
-
         return result;
-    }
-
-    public static void main(String[] args) {
-
     }
 }
