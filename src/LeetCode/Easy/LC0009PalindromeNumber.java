@@ -35,4 +35,42 @@ public class LC0009PalindromeNumber {
         // or if we ignore the middle digit in odd-length numbers (reversedHalf / 10)
         return x == reversedHalf || x == reversedHalf / 10;
     }
+
+    public static boolean isPalindromeLatest(int number) {
+        // Edge-cases
+        if (number < 0 || (number % 10 == 0 && number != 0)) {
+            return false;
+        }
+
+        int fromEndReversed = 0;
+        while (number > fromEndReversed) {
+            // append the last digit to fromEndReversed
+            fromEndReversed = (number % 10) + (fromEndReversed * 10);
+            number = number / 10;
+        }
+
+        return number == fromEndReversed || number == (fromEndReversed / 10);
+    }
+
+    public static boolean isPalindromeX(int number) {
+        // Edge-cases
+        if (number < 0 || (number % 10 == 0 && number != 0)) {
+            return false;
+        }
+
+        int reversedEndHalf = 0;
+        while (number > reversedEndHalf) {
+            reversedEndHalf = (number % 10) + (reversedEndHalf * 10);
+            number /= 10;
+        }
+
+        return number == reversedEndHalf || number == (reversedEndHalf / 10);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = { 122, 121, -121, 222222, 2020202, 909090 };
+        for (int num : numbers) {
+            System.out.println(isPalindromeX(num));
+        }
+    }
 }

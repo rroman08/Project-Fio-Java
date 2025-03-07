@@ -1,5 +1,6 @@
 package LeetCode.Easy;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +14,7 @@ import java.util.Map;
  * TC: O(n), SC: O(n)
  * */
 public class LC0001TwoSum {
-    public int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int curVal = nums[i];
@@ -27,7 +28,7 @@ public class LC0001TwoSum {
     }
 
     // Similar solution but with two loops:
-    public int[] twoSumTwoLoops(int[] nums, int target) {
+    public static int[] twoSumTwoLoops(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], i);
@@ -44,7 +45,7 @@ public class LC0001TwoSum {
     }
 
     // Brute-force solution
-    public int[] twoSumBruteForce(int[] nums, int target) {
+    public static int[] twoSumBruteForce(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[j] == target - nums[i]) {
@@ -53,5 +54,47 @@ public class LC0001TwoSum {
             }
         }
         return new int[] {};
+    }
+
+    public static int[] twoSumLatest(int[] arr, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            int complement = target - arr[i];
+            if (map.containsKey(complement)) {
+                return new int[] {map.get(complement), i};
+            }
+            map.put(arr[i], i);
+        }
+
+//        Map<Integer, Integer> map = new HashMap<>();
+//        for (int i = 0; i < arr.length; i++) {
+//            map.put(arr[i], i);
+//        }
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            int complement = target - arr[i];
+//            if (map.containsKey(complement) && map.get(complement) != i) {
+//                return new int[] {i, map.get(complement)};
+//            }
+//        }
+        return null;
+    }
+
+    public static int[] twoSumX(int[] arr, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            int complement = target - arr[i];
+            if (map.containsKey(complement)) {
+                return new int[] {map.get(complement), i};
+            }
+            map.put(arr[i], i);
+        }
+        return new int[] {};
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 9, 5, 7};
+        int target = 9;
+        System.out.println(Arrays.toString(twoSumX(arr, target)));
     }
 }
