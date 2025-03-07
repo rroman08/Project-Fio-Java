@@ -52,25 +52,10 @@ public class LC0009PalindromeNumber {
         return number == fromEndReversed || number == (fromEndReversed / 10);
     }
 
-    public static boolean isPalindromeX(int number) {
-        // Edge-cases
-        if (number < 0 || (number % 10 == 0 && number != 0)) {
-            return false;
-        }
-
-        int reversedEndHalf = 0;
-        while (number > reversedEndHalf) {
-            reversedEndHalf = (number % 10) + (reversedEndHalf * 10);
-            number /= 10;
-        }
-
-        return number == reversedEndHalf || number == (reversedEndHalf / 10);
-    }
-
     public static void main(String[] args) {
         int[] numbers = { 122, 121, -121, 222222, 2020202, 909090 };
         for (int num : numbers) {
-            System.out.println(isPalindromeX(num));
+            System.out.println(isPalindromeLatest(num));
         }
     }
 }

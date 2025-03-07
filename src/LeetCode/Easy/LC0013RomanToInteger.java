@@ -34,4 +34,11 @@ public class LC0013RomanToInteger {
         }
         return result;
     }
+
+    public static void main(String[] args) {
+        String[] numerals = {"VII", "XI", "MI", "II"};
+        for (String numeral : numerals) {
+            System.out.println(romanToInt(numeral));
+        }
+    }
 }
