@@ -40,4 +40,11 @@ public class LC0020ValidParentheses {
          }
         return stack.isEmpty();  // Stack should be empty if all brackets are matched
     }
+
+    public static void main(String[] args) {
+        String[] tests = {"()", "()[]{}", "(]", "([])"};
+        for (String test : tests) {
+            System.out.println(isValid(test));
+        }
+    }
 }

@@ -27,4 +27,9 @@ public class LC0014LongestCommonPrefix {
         }
         return prefix;
     }
+
+    public static void main(String[] args) {
+        String[] words = {"flower", "flow", "flight"};
+        System.out.println(longestCommonPrefix(words));
+    }
 }

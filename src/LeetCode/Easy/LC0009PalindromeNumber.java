@@ -52,10 +52,21 @@ public class LC0009PalindromeNumber {
         return number == fromEndReversed || number == (fromEndReversed / 10);
     }
 
+    public static boolean now(int number) {
+        if (number < 0 || (number % 10 == 0 && number != 0)) return false;
+
+        int fromEndReversed = 0;
+        while (number > fromEndReversed) {
+            fromEndReversed = number % 10 + (fromEndReversed * 10);
+            number /= 10;
+        }
+        return number == fromEndReversed || number == (fromEndReversed / 10);
+    }
+
     public static void main(String[] args) {
         int[] numbers = { 122, 121, -121, 222222, 2020202, 909090 };
         for (int num : numbers) {
-            System.out.println(isPalindromeLatest(num));
+            System.out.println(now(num));
         }
     }
 }
