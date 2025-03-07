@@ -1,6 +1,6 @@
-package LeetCode;
+package LeetCode.Medium;
 
-public class SetMatrixZeroes {
+public class LC0073SetMatrixZeroes {
     // LeetCode 73
     // Given an m n integer matrix, if an element is 0, set its entire row and column to 0s.
     // Must be achieved in place. m == matrix.length, n == matrix[0].length

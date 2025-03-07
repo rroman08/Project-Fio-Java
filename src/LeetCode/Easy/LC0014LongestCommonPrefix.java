@@ -8,7 +8,7 @@ package LeetCode.Easy;
  * TC: O(m*n) where m is the lengths of the list and n is the longest string in the list
  * SC: 0(1) only use one prefix without any additional data structure
  */
-public class LongestCommonPrefix {
+public class LC0014LongestCommonPrefix {
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) return "";
         if (strs.length == 1) return strs[0];

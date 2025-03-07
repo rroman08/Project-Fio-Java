@@ -17,7 +17,7 @@ package LeetCode.Easy;
  *
  * Can you solve it without converting the integer to a string?
  */
-public class PalindromeNumber {
+public class LC0009PalindromeNumber {
     public static boolean isPalindrome(int x) {
         // Edge cases: Negative numbers and numbers ending in 0 (except 0 itself)
         // are not palindromes

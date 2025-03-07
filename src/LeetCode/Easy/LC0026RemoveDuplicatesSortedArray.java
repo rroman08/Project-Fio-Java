@@ -1,8 +1,5 @@
 package LeetCode.Easy;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * (26)
  * Given an integer array nums sorted in non-decreasing order,
@@ -31,7 +28,7 @@ import java.util.Map;
  * }
  * If all assertions pass, then your solution will be accepted.
  */
-public class RemoveDuplicatesSortedArray {
+public class LC0026RemoveDuplicatesSortedArray {
     public static int removeDuplicates(int[] nums) {
         // We need to modify the array in-place and the size of the final
         // array would potentially be smaller than the size of the input

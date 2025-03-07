@@ -1,10 +1,10 @@
-package LeetCode;
+package LeetCode.Easy;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MoveZeroes {
+public class LC0283MoveZeroes {
     // LeetCode 283
     // Given an integer array "nums" move all 0s to the end of it while maintaining the relative
     // order of the non-zero elements. (Must be done in place without making a copy of the array)

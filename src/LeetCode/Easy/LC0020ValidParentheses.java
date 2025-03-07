@@ -20,7 +20,7 @@ import java.util.Stack;
  * Hint 3: When you encounter a closing bracket, check if the top of the stack was
  * the opening for it. If yes, pop it from the stack. Otherwise, return false.
  */
-public class ValidParentheses {
+public class LC0020ValidParentheses {
     public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
 

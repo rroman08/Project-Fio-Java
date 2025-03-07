@@ -1,6 +1,6 @@
-package LeetCode.Med;
+package LeetCode.Medium;
 
-public class RedundantConnection {
+public class LC0684RedundantConnection {
     /**
      * 684
      * You are given a graph that started as a tree with n nodes labeled from 1 to n, with

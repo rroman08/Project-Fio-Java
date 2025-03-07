@@ -12,7 +12,7 @@ import java.util.Map;
  * Can you come up with an algorithm that is less than O(n^2) time complexity?
  * TC: O(n), SC: O(n)
  * */
-public class TwoSum {
+public class LC0001TwoSum {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

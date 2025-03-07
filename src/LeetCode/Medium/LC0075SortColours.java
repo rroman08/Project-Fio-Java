@@ -1,8 +1,8 @@
-package LeetCode;
+package LeetCode.Medium;
 
 import java.util.Arrays;
 
-public class SetColours {
+public class LC0075SortColours {
     // LeetCode 75
     // Array contains three colours, represented by values. Can this array be sorted in linear
     // rather than TC: O(n log n)?
