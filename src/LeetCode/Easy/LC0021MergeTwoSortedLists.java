@@ -17,7 +17,7 @@ package LeetCode.Easy;
  * Does not use any extra memory other than a few pointer variables.
  * Merging is done in-place, reusing existing nodes
  */
-public class MergeTwoSortedLists {
+public class LC0021MergeTwoSortedLists {
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // Use a dummy node as temporary head
         ListNode dummy = new ListNode(-1);
@@ -42,6 +42,10 @@ public class MergeTwoSortedLists {
         }
         // Return the merged list starting from the real head
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
 
