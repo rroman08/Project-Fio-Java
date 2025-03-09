@@ -11,15 +11,6 @@ public class LC0283MoveZeroes {
     // Ex: nums = {0, 1, 0, 3, 12} -> {1, 3, 13, 0, 0}
     // TC: O(n)
     // SC: 0(1)
-    public static void main(String[] args) {
-        int[] nums = {0, 1, 0, 3, 12};
-        moveZeroes2(nums);
-        System.out.println(Arrays.toString(nums));
-        nums = new int[]{0, 1, 0, 3, 12};
-        System.out.println(Arrays.toString(nums));
-        moveZeroes(nums);
-        System.out.println(Arrays.toString(nums));
-    }
 
     // TC: O(n)
     // SC: O(1)
@@ -51,7 +42,7 @@ public class LC0283MoveZeroes {
     // This algorithm is NOT in place (brute-force solution)
     // TC: O(n)
     // SC: O(n)
-    public static void moveZeroes2(int[] nums) {
+    public static void bruteForce(int[] nums) {
         if (nums.length == 1) return;
 
         Queue<Integer> queue = new LinkedList<>();
@@ -73,5 +64,16 @@ public class LC0283MoveZeroes {
         for (int i = idx; i < nums.length; i++) {
             nums[i] = 0;
         }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 0, 3, 12};
+        System.out.println(Arrays.toString(nums));
+        moveZeroes(nums);
+        System.out.println(Arrays.toString(nums));
+        nums = new int[]{0, 1, 0, 3, 12};
+        System.out.println(Arrays.toString(nums));
+        bruteForce(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }
