@@ -46,21 +46,21 @@ public class LC0013RomanToInteger {
         romanMap.put('M', 1000);
 
         int result = 0;
-        int prevVal = 0;
-        for (int i = str.length() - 1; i >= 0 ; i--) {
-            int currVal = romanMap.get(str.charAt(i));
-            if (currVal < prevVal) {
-                result -= currVal;
+        int previous = 0;
+        for (int i = str.length() - 1; i >= 0; i--) {
+            int current = romanMap.get(str.charAt(i));
+            if (previous > current) {  // VI, IX
+                result -= current;
             } else {
-                result += currVal;
+                result += current;
             }
-            prevVal = currVal;
+            previous = current;
         }
         return result;
     }
 
     public static void main(String[] args) {
-        String[] numerals = {"VII", "XI", "MI", "II"};
+        String[] numerals = {"VII", "XI", "MI", "II", "CMXCIII", "VM"};
         for (String numeral : numerals) {
             System.out.println(now(numeral));
         }

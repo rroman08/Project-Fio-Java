@@ -38,26 +38,21 @@ public class LC0009PalindromeNumber {
 
     public static boolean isPalindromeLatest(int number) {
         // Edge-cases
-        if (number < 0 || (number % 10 == 0 && number != 0)) {
-            return false;
-        }
-
+        if (number < 0 || (number % 10 == 0 && number != 0)) return false;
         int fromEndReversed = 0;
         while (number > fromEndReversed) {
             // append the last digit to fromEndReversed
             fromEndReversed = (number % 10) + (fromEndReversed * 10);
             number = number / 10;
         }
-
         return number == fromEndReversed || number == (fromEndReversed / 10);
     }
 
     public static boolean now(int number) {
         if (number < 0 || (number % 10 == 0 && number != 0)) return false;
-
         int fromEndReversed = 0;
         while (number > fromEndReversed) {
-            fromEndReversed = number % 10 + (fromEndReversed * 10);
+            fromEndReversed = (number % 10) + (fromEndReversed * 10);
             number /= 10;
         }
         return number == fromEndReversed || number == (fromEndReversed / 10);
