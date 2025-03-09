@@ -41,10 +41,27 @@ public class LC0020ValidParentheses {
         return stack.isEmpty();  // Stack should be empty if all brackets are matched
     }
 
+    public static boolean now(String str) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : str.toCharArray()) {
+            if (c == '{' || c == '[' || c == '(') {
+                stack.push(c);
+            } else {
+                char top = stack.pop();
+                if ((top == '{' && c != '}') ||
+                        (top == '(' && c != ')') ||
+                        (top == '[' && c != ']')) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
     public static void main(String[] args) {
         String[] tests = {"()", "()[]{}", "(]", "([])"};
         for (String test : tests) {
-            System.out.println(isValid(test));
+            System.out.println(now(test));
         }
     }
 }

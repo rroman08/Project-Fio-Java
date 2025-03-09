@@ -17,7 +17,6 @@ package LeetCode.Easy;
  * as well as the size of nums.
  *
  * Return k.
- * Custom Judge:
  * The judge will test your solution with the following code:
  * int[] nums = [...]; // Input array
  * int[] expectedNums = [...]; // The expected answer with correct length
@@ -52,5 +51,25 @@ public class LC0026RemoveDuplicatesSortedArray {
             }
         }
         return k;
+    }
+
+    public static int now(int[] arr) {
+        if (arr.length == 0) return 0;
+        if (arr.length == 1) return 1;
+        int k = 1;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i - 1] != arr[i]) {
+                arr[k] = arr[i];
+                k++;
+            }
+        }
+        return k;
+    }
+
+    public static void main(String[] args) {
+        int[] test = {1, 2, 3, 4, 5};
+        int[] test2 = {1, 2, 3, 3, 4, 5, 5};
+        System.out.println(removeDuplicates(test));
+        System.out.println(now(test2));
     }
 }
