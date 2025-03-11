@@ -31,9 +31,8 @@ public class LC0014LongestCommonPrefix {
     public static String now(String[] words) {
         if (words.length == 0) return "";
         if (words.length == 1) return words[0];
-
         String longestPrefix = words[0];
-        for (int i = 1; i < words.length ; i++) {
+        for (int i = 1; i < words.length; i++) {
             while (words[i].indexOf(longestPrefix) != 0) {
                 longestPrefix = longestPrefix.substring(0, longestPrefix.length() - 1);
                 if (longestPrefix.isEmpty()) return "";

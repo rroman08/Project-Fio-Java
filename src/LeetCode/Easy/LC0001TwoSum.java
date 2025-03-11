@@ -45,7 +45,7 @@ public class LC0001TwoSum {
     }
 
     // Brute-force solution
-    public static int[] twoSumBruteForce(int[] nums, int target) {
+    public static int[] bruteForce(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[j] == target - nums[i]) {
@@ -56,38 +56,14 @@ public class LC0001TwoSum {
         return new int[] {};
     }
 
-    public static int[] twoSumLatest(int[] arr, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < arr.length; i++) {
-            int complement = target - arr[i];
-            if (map.containsKey(complement)) {
-                return new int[] {map.get(complement), i};
-            }
-            map.put(arr[i], i);
-        }
-
-//        Map<Integer, Integer> map = new HashMap<>();
-//        for (int i = 0; i < arr.length; i++) {
-//            map.put(arr[i], i);
-//        }
-//
-//        for (int i = 0; i < arr.length; i++) {
-//            int complement = target - arr[i];
-//            if (map.containsKey(complement) && map.get(complement) != i) {
-//                return new int[] {i, map.get(complement)};
-//            }
-//        }
-        return null;
-    }
-
     public static int[] now(int[] arr, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> seenMap = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
             int complement = target - arr[i];
-            if (map.containsKey(complement)) {
-                return new int[] {map.get(complement), i};
+            if (seenMap.containsKey(complement)) {
+                return new int[] {seenMap.get(complement), i};
             }
-            map.put(arr[i], i);
+            seenMap.put(arr[i], i);
         }
         return new int[] {};
     }

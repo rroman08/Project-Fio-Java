@@ -47,10 +47,11 @@ public class LC0020ValidParentheses {
             if (c == '{' || c == '[' || c == '(') {
                 stack.push(c);
             } else {
-                char top = stack.pop();
-                if ((top == '{' && c != '}') ||
-                        (top == '(' && c != ')') ||
-                        (top == '[' && c != ']')) {
+                if (stack.isEmpty()) return false;
+                char topChar = stack.pop();
+                if ((c == '}' && topChar != '{') ||
+                        (c == ']' && topChar != '[') ||
+                        (c == ')' && topChar != '(')) {
                     return false;
                 }
             }
