@@ -57,13 +57,13 @@ public class LC0001TwoSum {
     }
 
     public static int[] now(int[] arr, int target) {
-        Map<Integer, Integer> seenMap = new HashMap<>();
+        Map<Integer, Integer> seen = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
             int complement = target - arr[i];
-            if (seenMap.containsKey(complement)) {
-                return new int[] {seenMap.get(complement), i};
+            if (seen.containsKey(complement)) {
+                return new int[] {seen.get(complement), i};
             }
-            seenMap.put(arr[i], i);
+            seen.put(arr[i], i);
         }
         return new int[] {};
     }

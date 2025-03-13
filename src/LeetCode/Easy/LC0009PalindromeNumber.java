@@ -36,15 +36,14 @@ public class LC0009PalindromeNumber {
         return x == reversedHalf || x == reversedHalf / 10;
     }
 
-    public static boolean now(int number) {
-        if (number < 0 || (number % 10 == 0 && number != 0)) return false;
-
-        int fromEndReversed = 0;
-        while (number > fromEndReversed) {
-            fromEndReversed = (number % 10) + (fromEndReversed * 10);
-            number /= 10;
+    public static boolean now(int num) {
+        if (num < 0 || (num % 10 == 0 && num != 0)) return false;
+        int fromBackRev = 0;
+        while (num > fromBackRev) {
+            fromBackRev = (num % 10) + (fromBackRev * 10);
+            num /= 10;
         }
-        return (number == fromEndReversed) || (number == (fromEndReversed / 10));
+        return num == fromBackRev || num == (fromBackRev / 10);
     }
 
     public static void main(String[] args) {
