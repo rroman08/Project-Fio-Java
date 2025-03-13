@@ -10,19 +10,19 @@ import java.util.Map;
  */
 public class LC0013RomanToInteger {
     public static int romanToInt(String s) {
-        Map<Character, Integer> romanMap = new HashMap<>();
-        romanMap.put('I', 1);
-        romanMap.put('V', 5);
-        romanMap.put('X', 10);
-        romanMap.put('L', 50);
-        romanMap.put('C', 100);
-        romanMap.put('D', 500);
-        romanMap.put('M', 1000);
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
 
         int result = 0;
         int previousVal = 0;
         for (int i = s.length() - 1; i >= 0 ; i--) {
-            int curVal = romanMap.get(s.charAt(i));
+            int curVal = map.get(s.charAt(i));
 
             if (curVal < previousVal) {
                 result -= curVal;
@@ -36,19 +36,20 @@ public class LC0013RomanToInteger {
     }
 
     public static int now(String str) {
-        Map<Character, Integer> romanMap = new HashMap<>();
-        romanMap.put('I', 1);
-        romanMap.put('V', 5);
-        romanMap.put('X', 10);
-        romanMap.put('L', 50);
-        romanMap.put('C', 100);
-        romanMap.put('D', 500);
-        romanMap.put('M', 1000);
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
 
         int result = 0;
         int previous = 0;
+
         for (int i = str.length() - 1; i >= 0; i--) {
-            int current = romanMap.get(str.charAt(i));
+            int current = map.get(str.charAt(i));
             if (previous > current) {
                 result -= current;
             } else {

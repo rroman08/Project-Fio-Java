@@ -31,14 +31,15 @@ public class LC0014LongestCommonPrefix {
     public static String now(String[] words) {
         if (words.length == 0) return "";
         if (words.length == 1) return words[0];
-        String longestPrefix = words[0];
+
+        String prefix = words[0];
         for (int i = 1; i < words.length; i++) {
-            while (words[i].indexOf(longestPrefix) != 0) {
-                longestPrefix = longestPrefix.substring(0, longestPrefix.length() - 1);
-                if (longestPrefix.isEmpty()) return "";
+            while (words[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
             }
         }
-        return longestPrefix;
+        return prefix;
     }
 
     public static void main(String[] args) {
