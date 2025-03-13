@@ -42,21 +42,21 @@ public class LC0020ValidParentheses {
     }
 
     public static boolean now(String str) {
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> openingBrackets = new Stack<>();
         for (char c : str.toCharArray()) {
-            if (c == '{' || c == '[' || c == '(') {
-                stack.push(c);
+            if (c == '(' || c == '{' || c == '[') {
+                openingBrackets.push(c);
             } else {
-                if (stack.isEmpty()) return false;
-                char topChar = stack.pop();
-                if ((c == '}' && topChar != '{') ||
-                        (c == ']' && topChar != '[') ||
-                        (c == ')' && topChar != '(')) {
+                if (openingBrackets.isEmpty()) return false;
+                char top = openingBrackets.pop();
+                if ((top == '(' && c != ')') ||
+                        (top == '{' && c != '}') ||
+                        (top == '[' && c != ']')) {
                     return false;
                 }
             }
         }
-        return stack.isEmpty();
+        return openingBrackets.isEmpty();
     }
 
     public static void main(String[] args) {
